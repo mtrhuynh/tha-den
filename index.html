@@ -344,7 +344,6 @@
         $("posts").appendChild(mark);
         feed("🏁 Đèn của <b>" + esc(r.name) + "</b> về đích thứ " + r.rank + " — cổng " + r.gate.icon + " " + esc(r.gate.label) +
              " · rút được <b>quẻ số " + r.que.so_que + "</b> · " + capWord(r.que.cap) + ".");
-        if (r.rank === 1) cheer();
         if (r.isMe) { myResult = r; bell(); }
         if (isLast) endRace();
         else $("raceStatus").textContent = "Đã có " + finishedCount + "/5 đèn về đích…";
@@ -408,7 +407,6 @@
         $("startBtn").disabled = true; $("joinBtn").disabled = true;
         $("raceStatus").textContent = "Đang đua… gió nước khó lường, cứ thong thả xem.";
         feed("🏁 Cuộc đua bắt đầu! 5 đèn rời vạch xuất phát.");
-        cheer();
         rafId = requestAnimationFrame(step);
       };
       $("resetBtn").onclick = function () {
